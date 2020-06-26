@@ -17,15 +17,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className="siteContainer">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()} Debdeep Nath
         </footer>
-      </div>
-    </>
+    </div>
   )
 }
 

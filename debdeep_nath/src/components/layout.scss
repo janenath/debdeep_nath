@@ -1,5 +1,165 @@
+//variables
+$brown: #95674B;
+$black: #001717;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+$roboto: 'Roboto', helvetica, sans-serif;
+
+
 * {
     margin: 0;
     padding: 0;
+    // border: 1px solid green;
+}
+body {
+    font-family: $roboto;
+}
+main {
+   flex-grow: 1;
+}
+a {
+    color: $black;
+    text-decoration: none;
+}
+.siteContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+//header
+.headingContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    @media (min-width: 1000px){
+        padding: 60px;
+    }
+    @media (min-width: 1500px){
+        padding: 100px;
+    }
+}
+.siteHeading {
+    font-weight: 500;
+    font-size: 46px;
+    margin-bottom: 10px;
+    @media (min-width: 1000px){
+        font-size: 50px;
+    }
+    @media (min-width: 1500px){
+        font-size: 60px
+    }
+}
+.siteSubheading {
+    font-weight: 400;
+    font-size: 24px;
+    @media (min-width: 1000px){
+        font-size: 28px;
+    }
+    @media (min-width: 1500px){
+        font-size: 32px
+    }
+}
+//navbar
+.navbar {
+    font-size: 18px;
+    grid-area: nav;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    align-items: center;
+    justify-items: center;
+    letter-spacing: .1em;
+    a{
+        color: $brown;
+    }
+    @media (min-width: 700px) {
+        margin: 0 20%;
+    }
+}
+.false {
+    @media (max-width: 700px) {
+        display: none;
+    }
+}
+.true {
+    @media (max-width: 700px) {
+        background: $brown;
+        padding: 10px;
+        color: white;
+        margin-top: 10px;
+    }
+}
+.hamburger {
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    color: $brown;
+    @media (min-width: 700px) {
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+    header {
+        grid-template-areas: "nav nav";
+    }
+    .navbar {
+        grid-template-rows: repeat(4,auto);
+        grid-template-columns: none;
+        grid-row-gap: 20px;
+        a {
+            color: white;
+        }
+    }
+}
+
+//home
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @media (min-width: 1000px) {
+        flex-direction: row;
+        margin: 100px;
+    }
+    .gatsby-image-wrapper {
+        width: 100vw;
+        margin-top: 40px;
+        @media (min-width: 1000px) {
+            margin-top: 0;
+        }
+    }
+    p {
+        margin: 40px;
+        line-height: 2;
+        @media (min-width: 700px) {
+            margin: 40px 30%;
+        }
+        @media (min-width: 700px) {
+            margin: 40px 10%;
+        }
+    }
+    button {
+        padding: 10px;
+        background: $brown;
+        border: none;
+        margin-bottom: 40px;
+        a{
+            color: white;
+        }
+    }
+}
+
+
+//footer
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 10px;
 }
 
